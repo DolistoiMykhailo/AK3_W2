@@ -90,14 +90,15 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
-  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
-  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_2);
-  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
-  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4);
-  TIM4->CCR1 = 529;
-  TIM4->CCR2 = 1334;
-  TIM4->CCR3 = 759;
-  TIM4->CCR4 = 1150;
+  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1); // Запуск ШІМ на каналі 1 таймера 4
+  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_2); // Запуск ШІМ на каналі 2 таймера 4
+  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3); // Запуск ШІМ на каналі 3 таймера 4
+  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4); // Запуск ШІМ на каналі 4 таймера 4
+  
+  TIM4->CCR1 = 529; // Встановлення ширини імпульсу (duty cycle) для каналу 1
+  TIM4->CCR2 = 1334; // Встановлення ширини імпульсу (duty cycle) для каналу 2
+  TIM4->CCR3 = 759; // Встановлення ширини імпульсу (duty cycle) для каналу 3
+  TIM4->CCR4 = 1150; // Встановлення ширини імпульсу (duty cycle) для каналу 4
   /* USER CODE END 2 */
 
   /* Infinite loop */
